@@ -25,8 +25,13 @@ Run this exercise:
     yarn -s 0
 
 */
+interface UserProps {
+    name: string;
+    age: number;
+    occupation: string;
+}
 
-const users: unknown[] = [
+const users: UserProps[] = [
     {
         name: 'Max Mustermann',
         age: 25,
@@ -39,12 +44,12 @@ const users: unknown[] = [
     }
 ];
 
-function logPerson(user: unknown) {
-    console.log(` - ${chalk.green(user.name)}, ${user.age}`);
+function logPerson(user: UserProps) {
+    console.log(` - ${chalk.green(user.name)}, ${user.age}, ${user.occupation}`);
 }
 
 console.log(chalk.yellow('Users:'));
 users.forEach(logPerson);
-
+console.log(chalk.bgBlue('Exercise Complete'));
 // In case if you are stuck:
 // https://www.typescriptlang.org/docs/handbook/interfaces.html#introduction
